@@ -18,6 +18,18 @@ public class LinkedList{
         head = newNode;
     }
 
+    public void insertAfter(Node prev_node,int new_data){
+
+        if(prev_node == null){
+            System.out.println("ERROR");
+            return;
+        }
+        Node new_node = new Node(new_data);
+        new_node.next = prev_node.next;
+        prev_node.next = new_node;
+        
+    }
+
     public void printList(){
         Node n = head;
         while(n!=null){
@@ -35,6 +47,7 @@ public class LinkedList{
         list1.head.next = second;
         second.next = third;
         list1.push(4);
+        list1.insertAfter(second,10);
         list1.printList();
     }
 }
