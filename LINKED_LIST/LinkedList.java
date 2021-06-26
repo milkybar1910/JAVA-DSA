@@ -89,6 +89,10 @@ public class LinkedList{
 
     }
 
+    public void deleteList(){
+        head = null;
+    }
+
     public void printList(){
         Node n = head;
         while(n!=null){
@@ -112,6 +116,7 @@ public class LinkedList{
         list1.deleteNode(10);
         list1.deleteNodeAtPostion(3);
         list1.printList();
+        list1.deleteList();
         
     }
 }
