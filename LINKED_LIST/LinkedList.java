@@ -128,6 +128,35 @@ public class LinkedList {
         return searchNode(head.next, x);
     }
 
+    // iterative
+    public int getNth(int index) {
+        Node current = head;
+        int count = 0;
+        while (current != null) {
+            if (count == index) {
+                return current.data;
+            }
+            count++;
+            current = current.next;
+        }
+        assert (false);
+        return 0;
+    }
+
+    // recursive
+    static int getNthRecursive(Node head, int index) {
+        int count = 0;
+        if (head == null) {
+            return 0;
+        }
+        if (count == index) {
+            return head.data;
+        }
+
+        return getNthRecursive(head.next, index - 1);
+
+    }
+
     public void printList() {
         Node n = head;
         while (n != null) {
