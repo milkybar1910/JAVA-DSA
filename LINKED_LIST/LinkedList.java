@@ -16,6 +16,7 @@ public class LinkedList{
         Node newNode = new Node(new_data);
         newNode.next = head;
         head = newNode;
+        return;
     }
 
     public void insertAfter(Node prev_node,int new_data){
@@ -27,7 +28,22 @@ public class LinkedList{
         Node new_node = new Node(new_data);
         new_node.next = prev_node.next;
         prev_node.next = new_node;
-        
+        return;
+    }
+
+    public void insertAtEnd(int new_data){
+        Node new_node = new Node(new_data);
+        Node n = head;
+        if(head == null){
+            head = new_node;
+            return;
+        }
+        while(n.next!=null){
+            n= n.next;
+        }
+
+        n.next = new_node;
+        return;
     }
 
     public void printList(){
@@ -48,6 +64,7 @@ public class LinkedList{
         second.next = third;
         list1.push(4);
         list1.insertAfter(second,10);
+        list1.insertAtEnd(90);
         list1.printList();
     }
 }
