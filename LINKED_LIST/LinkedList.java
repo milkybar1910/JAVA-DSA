@@ -66,6 +66,29 @@ public class LinkedList{
         return;
     }
 
+    public void deleteNodeAtPostion(int position){
+        if(head == null){
+            return;
+        }
+
+        Node temp = head;
+        if(position==0){
+            head = head.next;
+            return;
+        }
+
+        for(int i=0;temp!=null && i<position-1;i++){
+            temp = temp.next;
+        }
+        if(temp == null || temp.next == null){
+            return;
+        }
+
+        Node next = temp.next.next;
+        temp.next = next;
+
+    }
+
     public void printList(){
         Node n = head;
         while(n!=null){
@@ -87,6 +110,7 @@ public class LinkedList{
         list1.insertAfter(second,10);
         list1.insertAtEnd(90);
         list1.deleteNode(10);
+        list1.deleteNodeAtPostion(3);
         list1.printList();
         
     }
