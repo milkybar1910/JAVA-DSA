@@ -93,6 +93,16 @@ public class LinkedList{
         head = null;
     }
 
+    public int getLength(){
+        int length=0;
+        Node temp = head;
+        while(temp.next!=null){
+            length++;
+            temp = temp.next;
+        }
+        return length;
+    }
+
     public void printList(){
         Node n = head;
         while(n!=null){
